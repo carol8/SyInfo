@@ -173,8 +173,6 @@ public class MemoryPanel extends JPanel{
         memoryTable.setFont(new Font("Plain", Font.PLAIN, 16));
         memoryTableScroll = new JScrollPane(memoryTable);
         this.add(memoryTableScroll, c);
-
-        System.out.println(memory.getPhysicalMemory().toString());
     }
 
     public void update(){
@@ -195,7 +193,7 @@ public class MemoryPanel extends JPanel{
         }
         memoryAvailable.setValue((int) (ratio * 1000));
         memoryAvailable.setForeground(new Color((int) r, (int) g, 0));
-        memoryAvailableValue.setText(String.format("%.2f/%.2fGB ", (total - available) / 1e9, total / 1e9));
+        memoryAvailableValue.setText(String.format("%.2f/%.2fGB ", (total - available) / (1024.0 * 1024.0 * 1024.0), total / (1024.0 * 1024.0 * 1024.0)));
     }
 
     public JProgressBar getMemoryAvailable() {
