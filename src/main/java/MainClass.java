@@ -7,6 +7,8 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 import java.awt.*;
 
+import static oshi.util.Util.sleep;
+
 public class MainClass {
     public static void main(String[] args) throws InterruptedException {
         LafManager.install();
@@ -57,7 +59,7 @@ public class MainClass {
             cpuPanel.update();
             memoryPanel.update();
             hddPanel.update();
-            Thread.sleep(300);
+            sleep(300);
         }
     }
 }
