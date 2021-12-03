@@ -105,7 +105,7 @@ public class MemoryPanel extends JPanel{
         c.ipady = 0;
         c.gridwidth = 2;
         c.anchor = GridBagConstraints.WEST;
-        memoryPage.setText(String.valueOf(memory.getPageSize()) + " Bytes");
+        memoryPage.setText(memory.getPageSize() + " Bytes");
         memoryPage.setFont(new Font("Plain", Font.PLAIN, 24));
         this.add(memoryPage, c);
 

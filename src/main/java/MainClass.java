@@ -1,14 +1,11 @@
 import com.github.weisj.darklaf.LafManager;
 import com.github.weisj.darklaf.theme.DarculaTheme;
-import com.github.weisj.darklaf.theme.HighContrastDarkTheme;
 import com.github.weisj.darklaf.theme.IntelliJTheme;
 import oshi.SystemInfo;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MainClass {
     public static void main(String[] args) throws InterruptedException {

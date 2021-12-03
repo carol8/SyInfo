@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicProgressBarUI;
 import java.awt.*;
 
-public class CpuPanel extends JPanel{
+public class CpuPanel extends JPanel {
     private long[] prevTicks = new long[CentralProcessor.TickType.values().length];
     private CentralProcessor cpu;
     private GridBagConstraints c = new GridBagConstraints();
@@ -21,7 +21,8 @@ public class CpuPanel extends JPanel{
     private JLabel cpuLogicalCoreCount = new JLabel();
     private JLabel cpuMaxFreqLabel = new JLabel();
     private JLabel cpuMaxFreq = new JLabel();
-    public CpuPanel(CentralProcessor cpu){
+
+    public CpuPanel(CentralProcessor cpu) {
         this.cpu = cpu;
         this.setLayout(new GridBagLayout());
         this.setBackground(Color.WHITE);
@@ -65,9 +66,14 @@ public class CpuPanel extends JPanel{
         cpuProgressBar.setMinimum(0);
         cpuProgressBar.setMaximum(1000);
         cpuProgressBar.setStringPainted(true);
-        cpuProgressBar.setUI(new BasicProgressBarUI(){
-            protected Color getSelectionBackground() { return Color.black; }
-            protected Color getSelectionForeground() { return Color.black; }
+        cpuProgressBar.setUI(new BasicProgressBarUI() {
+            protected Color getSelectionBackground() {
+                return Color.black;
+            }
+
+            protected Color getSelectionForeground() {
+                return Color.black;
+            }
         });
         this.add(cpuProgressBar, c);
 
@@ -197,25 +203,24 @@ public class CpuPanel extends JPanel{
         c.ipady = 0;
         c.gridwidth = 1;
         c.anchor = GridBagConstraints.WEST;
-        cpuMaxFreq.setText(String.valueOf(cpu.getMaxFreq()/1000000000.0) + "GHz");
+        cpuMaxFreq.setText(cpu.getMaxFreq() / 1000000000.0 + "GHz");
         cpuMaxFreq.setFont(new Font("Plain", Font.PLAIN, 24));
         this.add(cpuMaxFreq, c);
     }
 
-    public void update(){
-        double cpuLoad = cpu.getSystemCpuLoadBetweenTicks( prevTicks ) * 255;
+    public void update() {
+        double cpuLoad = cpu.getSystemCpuLoadBetweenTicks(prevTicks) * 255;
         double r = cpuLoad;
         double g = 255 - cpuLoad;
-        if(r < g){
+        if (r < g) {
             r = r / g * 255;
             g = 255;
-        }
-        else{
+        } else {
             g = g / r * 255;
             r = 255;
         }
         prevTicks = cpu.getSystemCpuLoadTicks();
-        cpuProgressBar.setValue((int)(cpuLoad / 255 * 1000));
+        cpuProgressBar.setValue((int) (cpuLoad / 255 * 1000));
         cpuProgressBar.setForeground(new Color((int) r, (int) g, 0));
     }
 
