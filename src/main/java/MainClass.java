@@ -42,7 +42,6 @@ public class MainClass {
                     protected Color getSelectionBackground() {
                         return Color.black;
                     }
-
                     protected Color getSelectionForeground() {
                         return Color.black;
                     }
@@ -51,7 +50,6 @@ public class MainClass {
                     protected Color getSelectionBackground() {
                         return Color.black;
                     }
-
                     protected Color getSelectionForeground() {
                         return Color.black;
                     }
@@ -65,7 +63,6 @@ public class MainClass {
                     protected Color getSelectionBackground() {
                         return Color.black;
                     }
-
                     protected Color getSelectionForeground() {
                         return Color.black;
                     }
@@ -74,7 +71,6 @@ public class MainClass {
                     protected Color getSelectionBackground() {
                         return Color.black;
                     }
-
                     protected Color getSelectionForeground() {
                         return Color.black;
                     }
