@@ -38,15 +38,47 @@ public class MainClass {
                 cpuPanel.setBackground(new Color(43, 43, 43));
                 memoryPanel.setBackground(new Color(43, 43, 43));
                 hddPanel.setBackground(new Color(43, 43, 43));
-                cpuPanel.getCpuProgressBar().setUI(new BasicProgressBarUI());
-                memoryPanel.getMemoryAvailable().setUI(new BasicProgressBarUI());
+                cpuPanel.getCpuProgressBar().setUI(new BasicProgressBarUI() {
+                    protected Color getSelectionBackground() {
+                        return Color.black;
+                    }
+
+                    protected Color getSelectionForeground() {
+                        return Color.black;
+                    }
+                });
+                memoryPanel.getMemoryAvailable().setUI(new BasicProgressBarUI() {
+                    protected Color getSelectionBackground() {
+                        return Color.black;
+                    }
+
+                    protected Color getSelectionForeground() {
+                        return Color.black;
+                    }
+                });
             } else {
                 LafManager.installTheme(new IntelliJTheme());
                 cpuPanel.setBackground(Color.WHITE);
                 memoryPanel.setBackground(Color.WHITE);
                 hddPanel.setBackground(Color.WHITE);
-                cpuPanel.getCpuProgressBar().setUI(new BasicProgressBarUI());
-                memoryPanel.getMemoryAvailable().setUI(new BasicProgressBarUI());
+                cpuPanel.getCpuProgressBar().setUI(new BasicProgressBarUI() {
+                    protected Color getSelectionBackground() {
+                        return Color.black;
+                    }
+
+                    protected Color getSelectionForeground() {
+                        return Color.black;
+                    }
+                });
+                memoryPanel.getMemoryAvailable().setUI(new BasicProgressBarUI() {
+                    protected Color getSelectionBackground() {
+                        return Color.black;
+                    }
+
+                    protected Color getSelectionForeground() {
+                        return Color.black;
+                    }
+                });
             }
         });
         menu.add(darkMode);
